@@ -1,8 +1,7 @@
 use clap::{Parser, Subcommand};
 use rusqlite::{Connection, Result};
-use sqlite::*; // Import the functions from lib.rs
-// mod mylib; // Declare the mylib module
-// use mylib::*; // Import the functions from mylib.rs
+mod mylib; // Declare the mylib module
+use mylib::*; // Import the functions from mylib.rs
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -58,7 +57,10 @@ fn main() -> Result<()> {
             salary,
             years_of_experience,
         } => {
-            println!("Updating Record with user_id {} in table {}", user_id, table_name);
+            println!(
+                "Updating Record with user_id {} in table {}",
+                user_id, table_name
+            );
             update(
                 &conn,
                 &table_name,
@@ -69,8 +71,14 @@ fn main() -> Result<()> {
             )
             .expect("Failed to update record");
         }
-        Commands::Delete { table_name, user_id } => {
-            println!("Deleting Record with user_id {} from table {}", user_id, table_name);
+        Commands::Delete {
+            table_name,
+            user_id,
+        } => {
+            println!(
+                "Deleting Record with user_id {} from table {}",
+                user_id, table_name
+            );
             delete(&conn, &table_name, user_id).expect("Failed to delete record");
         }
         Commands::Load {

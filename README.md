@@ -1,4 +1,4 @@
-Check CI/CD Status: 
+Check CI/CD Status: [![CICD](https://github.com/nogibjj/kim_seijung_project7_rust_cli/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/kim_seijung_project7_rust_cli/actions/workflows/cicd.yml)
 
 # Mini-project #7
 #### Repo Title: Package a Python Script into Rust
@@ -55,7 +55,7 @@ Please refer to the following table to find all the commands you can execute wit
 | `delete`    | Deletes a specific record from a table | `./sqlite delete --table_name <table_name> --id <id>` |
 | `load`      | Loads data from a CSV file into a table | `./sqlite load --table_name <table_name> --file_path <file_path>` |
 
-### Test with users.csv
+### Test with employee.csv
 Theoretically this CLI tool can be configured to work with any CSV file, but the current CRUD operations and queries are set to work with users.csv, a simple dataset generated for this project.
 
 * Data schema:
@@ -65,3 +65,4 @@ Theoretically this CLI tool can be configured to work with any CSV file, but the
 | `age`                | INTEGER   |
 | `salary`             | INTEGER   |
 | `years_of_experience`| INTEGER   |
+
